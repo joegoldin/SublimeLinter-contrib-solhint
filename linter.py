@@ -15,3 +15,11 @@ class Solhint(NodeLinter):
     defaults = {
         'selector': 'source.sol'
     }
+
+    def run(self, cmd, code):
+        # Workaround eslint bug https://github.com/eslint/eslint/issues/9515
+        # Fixed in eslint 4.10.0
+        if code == '':
+            code = ' '
+
+        return super().run(cmd, code)
