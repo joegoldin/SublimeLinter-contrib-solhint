@@ -10,8 +10,8 @@ class Solhint(NodeLinter):
     regex = r'^\s+(?P<line>\d+):(?P<col>\d+)\s+((?P<error>error)|(?P<warning>warning))\s+(?P<message>.+)'
     multiline = False
     line_col_base = (1, 1)
-    tempfile_suffix = 'solidity'
+    tempfile_suffix = 'sol'
     error_stream = util.STREAM_BOTH
     defaults = {
-        'selector': 'source.solidity'
+        'selector': 'source.sol'
     }
