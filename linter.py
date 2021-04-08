@@ -6,7 +6,7 @@ from SublimeLinter.lint import NodeLinter, util
 class Solhint(NodeLinter):
     """Solhint class delegate call to solhint tool and return result back."""
 
-    cmd = 'solhint --config ./.solhint.json'
+    cmd = 'solhint --config ./.solhint.json ${file}'
     regex = r'^\s+(?P<line>\d+):(?P<col>\d+)\s+((?P<error>error)|(?P<warning>warning))\s+(?P<message>.+)'
     multiline = False
     line_col_base = (1, 1)
